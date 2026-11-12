@@ -25,46 +25,55 @@ const features = [
   {
     icon: ShieldCheckIcon,
     title: "Private By Design",
-    text: "Your activity stays on your machine. Noodli tracks locally and never sells or shares your data.",
+    text: "Your activity stays secure. Noodli tracks your workflow locally and never sells or shares your personal data.",
   },
 ];
 
 const Features = () => {
   return (
-    <section id="features" className="w-full">
-      <div className="cont py-20">
-        <div className="flex flex-col items-center text-center gap-4 mb-14">
-          <span className="bg-primary text-foreground text-xs font-medium tracking-widest uppercase px-3 py-1 border-2 border-foreground">
+    <section id="features" className="w-full py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        {/* Section Header */}
+        <div className="mb-12 flex flex-col items-center gap-4 text-center sm:mb-16">
+          <span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary-foreground">
             Features
           </span>
-          <h2 className="font-pixel text-5xl font-semibold tracking-tight leading-tight">
+          <h2 className="text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Everything you need to own your day.
           </h2>
-          <p className="max-w-2xl text-base font-light tracking-wide text-muted-foreground">
+          <p className="max-w-xl text-sm font-light tracking-wide text-foreground sm:text-base">
             Built for Windows. Designed to be invisible until you need the
             numbers that matter.
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature) => (
+        {/* Features Grid */}
+        <div className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+          {features.map((feature, i) => (
             <div
               key={feature.title}
-              className="group border-2 border-foreground bg-background p-6 flex flex-col gap-4 transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0_0_var(--color-foreground)]"
+              className={`group flex flex-col gap-5 rounded-3xl border border-foreground p-6 shadow-sm transition-all hover:shadow-md sm:p-8 ${
+                i === 0
+                  ? "bg-foreground text-background sm:col-span-2"
+                  : "bg-background text-foreground"
+              } ${i === 3 ? "sm:col-span-2" : ""}`}
             >
-              <div className="size-12 flex items-center justify-center border-2 border-foreground bg-primary transition-colors group-hover:bg-background">
+              <div className="flex size-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
                 <HugeiconsIcon
                   icon={feature.icon}
                   size={24}
-                  className="text-foreground"
+                  className={`transition-colors`}
                 />
               </div>
-              <h3 className="font-pixel text-2xl font-semibold tracking-tight">
-                {feature.title}
-              </h3>
-              <p className="text-sm font-light tracking-wide text-muted-foreground leading-relaxed">
-                {feature.text}
-              </p>
+
+              <div className="flex flex-col gap-2">
+                <h3 className="text-xl font-medium tracking-tight">
+                  {feature.title}
+                </h3>
+                <p className="text-sm font-light tracking-wide leading-relaxed">
+                  {feature.text}
+                </p>
+              </div>
             </div>
           ))}
         </div>
