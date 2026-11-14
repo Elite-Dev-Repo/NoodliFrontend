@@ -65,7 +65,7 @@ const FAQs = () => {
           </div>
 
           <a
-            href="mailto:support@noodli.app"
+            href="mailto:oyenekantomiwa2@gmail.com"
             className="mt-8 inline-flex items-center gap-2 self-start rounded-full bg-background px-6 py-3 text-sm font-medium text-black transition-colors hover:bg-foreground"
           >
             Contact support
@@ -87,7 +87,7 @@ const FAQs = () => {
                   className="flex w-full items-center justify-between gap-4 p-4 text-left font-medium text-foreground transition-colors hover:text-black sm:p-6"
                 >
                   <span className="text-base font-normal">{faq.question}</span>
-                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary">
+                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-foreground">
                     <HugeiconsIcon
                       icon={isOpen ? MinusIcon : PlusSignIcon}
                       size={16}

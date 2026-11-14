@@ -32,7 +32,7 @@ const HowItWorks = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Section Header */}
         <div className="mb-12 flex flex-col items-center gap-4 text-center sm:mb-16">
-          <span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary-foreground">
+          <span className="rounded-full bg-foreground px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary-foreground">
             How It Works
           </span>
           <h2 className="text-3xl font-medium leading-tight tracking-tight text-neutral-900 sm:text-4xl lg:text-5xl">
