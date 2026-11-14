@@ -198,3 +198,8 @@ body {
   pointer-events: none; /* Allows clicking through the grid */
   z-index: 0;
 }
+
+::selection {
+  background-color: var(--foreground);
+  color: var(--background);
+}
