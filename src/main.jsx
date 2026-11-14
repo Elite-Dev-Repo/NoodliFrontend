@@ -13,6 +13,7 @@ import Settings from "./Settings.jsx";
 import ForgotPassword from "./components/ForgotPassword";
 import Login from "./components/Login";
 import ResetPassword from "./components/ResetPassword";
+import Signup from "./components/Signup";
 const routes = createBrowserRouter([
   {
     path: "",
@@ -49,6 +50,10 @@ const routes = createBrowserRouter([
   {
     path: "/auth",
     element: <Login />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
   },
   {
     path: "/forgot-password",

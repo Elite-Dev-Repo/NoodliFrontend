@@ -81,6 +81,14 @@ const Header = () => {
           </ul>
 
           <div className="flex items-center gap-2">
+            {!hasAccess && (
+              <Link
+                to="/signup"
+                className="hidden h-9 items-center border border-foreground px-4 text-xs font-medium transition-colors hover:bg-secondary sm:flex sm:h-10 sm:px-5 sm:text-sm"
+              >
+                Sign up
+              </Link>
+            )}
             <button
               onClick={() => navigate(hasAccess ? "/dashboard" : "/auth")}
               className="h-9 bg-foreground px-4 text-xs font-medium text-background transition-colors hover:bg-primary hover:text-background sm:h-10 sm:px-5 sm:text-sm"
@@ -126,6 +134,25 @@ const Header = () => {
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-3 flex gap-2 border-t border-foreground/10 pt-3">
+                <Link
+                  to={hasAccess ? "/dashboard" : "/auth"}
+                  onClick={() => setMenuOpen(false)}
+                  className="flex-1 border border-foreground px-3 py-2 text-center text-sm font-medium transition-colors hover:bg-secondary"
+                >
+                  {hasAccess ? "Dashboard" : "Sign in"}
+                </Link>
+                {!hasAccess && (
+                  <Link
+                    to="/signup"
+                    onClick={() => setMenuOpen(false)}
+                    className="flex-1 bg-primary px-3 py-2 text-center text-sm font-medium text-primary-foreground transition-colors hover:bg-foreground"
+                  >
+                    Sign up
+                  </Link>
+                )}
+              </div>
             </div>
           )}
         </nav>

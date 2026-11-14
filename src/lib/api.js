@@ -57,6 +57,43 @@ export async function login(email, password) {
   }
 }
 
+export async function register({
+  username,
+  email,
+  password,
+  password2,
+  gender,
+  date_of_birth,
+} = {}) {
+  clearTokens();
+
+  try {
+    const payload = { username, email, password, password2 };
+    if (gender) payload.gender = gender;
+    if (date_of_birth) payload.date_of_birth = date_of_birth;
+
+    const res = await api.post("register/", payload);
+    const data = res.data;
+
+    saveTokens({ access: data?.access, refresh: data?.refresh });
+    return { success: true, data };
+  } catch (error) {
+    const data = error.response?.data;
+
+    const errorMessage =
+      data?.email?.[0] ||
+      data?.username?.[0] ||
+      data?.password?.[0] ||
+      data?.password2?.[0] ||
+      data?.non_field_errors?.[0] ||
+      data?.detail ||
+      error.message ||
+      "Unable to create your account.";
+
+    return { success: false, message: errorMessage };
+  }
+}
+
 export async function requestPasswordReset(email) {
   try {
     const res = await api.post("forgot_password/", { email });
