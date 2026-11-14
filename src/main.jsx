@@ -1,13 +1,17 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
 import Applications from "./Applications.jsx";
-import Analytics from "./Analytics.jsx";
 import Dashboard from "./Dashboard.jsx";
 import Docs from "./Docs.jsx";
 import Goals from "./Goals.jsx";
+import Leaderboard from "./Leaderboard.jsx";
 import Reports from "./Reports.jsx";
 import Settings from "./Settings.jsx";
 import ForgotPassword from "./components/ForgotPassword";
@@ -40,8 +44,12 @@ const routes = createBrowserRouter([
     element: <Docs />,
   },
   {
+    path: "/leaderboard",
+    element: <Leaderboard />,
+  },
+  {
     path: "/analytics",
-    element: <Analytics />,
+    element: <Navigate to="/leaderboard" replace />,
   },
   {
     path: "/settings",

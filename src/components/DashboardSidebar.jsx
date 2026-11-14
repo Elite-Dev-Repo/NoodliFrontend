@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
-  Analytics01Icon,
   Cancel01Icon,
   ChartLineData02Icon,
   ComputerActivityIcon,
   DashboardSquare01Icon,
   Logout03Icon,
   Menu01Icon,
+  RankingIcon,
   Settings02Icon,
   Target01Icon,
 } from "@hugeicons/core-free-icons";
@@ -36,10 +36,10 @@ const NAV_ITEMS = [
   },
   { key: "goals", label: "Goals", to: "/goals", icon: Target01Icon },
   {
-    key: "analytics",
-    label: "Analytics",
-    to: "/analytics",
-    icon: Analytics01Icon,
+    key: "leaderboard",
+    label: "Leaderboard",
+    to: "/leaderboard",
+    icon: RankingIcon,
   },
 ];
 
