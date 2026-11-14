@@ -264,7 +264,7 @@ const Applications = () => {
                             {stat.hint}
                           </p>
                         </div>
-                        <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                        <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-foreground text-background">
                           <HugeiconsIcon icon={stat.icon} size={18} />
                         </div>
                       </CardContent>

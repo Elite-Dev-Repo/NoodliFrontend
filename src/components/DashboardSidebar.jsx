@@ -57,16 +57,14 @@ const DashboardSidebar = ({ active = "dashboard", profile, onLogout }) => {
             aria-label="Noodli dashboard"
             onClick={closeMenu}
           >
-            <div className="flex size-8 items-center justify-center rounded-lg bg-background p-1.5">
+            <div className="flex size-8 items-center justify-center bg-background">
               <img
                 src={logo}
                 alt="Noodli logo"
-                className="h-full w-full object-contain"
+                className="h-full w-full object-cover"
               />
             </div>
-            <span className="font-pixel text-xl tracking-tight">
-              Noodli<span className="text-primary">.</span>
-            </span>
+            <span className="font-pixel text-xl tracking-tight">Noodli.</span>
           </Link>
 
           <div className="flex items-center gap-2">
@@ -148,15 +146,15 @@ const DashboardSidebar = ({ active = "dashboard", profile, onLogout }) => {
             className="flex items-center gap-2.5 px-2 py-1"
             aria-label="Noodli home"
           >
-            <div className="flex size-9 items-center justify-center rounded-xl bg-background p-1.5">
+            <div className="flex size-9 items-center justify-center bg-background">
               <img
                 src={logo}
                 alt="Noodli logo"
-                className="h-full w-full object-contain"
+                className="h-full w-full object-cover"
               />
             </div>
             <span className="font-pixel text-2xl tracking-tight text-background">
-              Noodli<span className="text-primary">.</span>
+              Noodli.
             </span>
           </Link>
 

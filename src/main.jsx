@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import Applications from "./Applications.jsx";
 import Analytics from "./Analytics.jsx";
 import Dashboard from "./Dashboard.jsx";
+import Docs from "./Docs.jsx";
 import Goals from "./Goals.jsx";
 import Reports from "./Reports.jsx";
 import Settings from "./Settings.jsx";
@@ -32,6 +33,10 @@ const routes = createBrowserRouter([
   {
     path: "/goals",
     element: <Goals />,
+  },
+  {
+    path: "/docs",
+    element: <Docs />,
   },
   {
     path: "/analytics",

@@ -140,6 +140,10 @@ body {
   .cont {
     @apply mx-auto w-full p-5 max-w-320;
   }
+
+  .code-inline {
+    @apply rounded bg-foreground/10 px-1.5 py-0.5 font-mono text-[0.85em] text-foreground;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -153,4 +157,44 @@ body {
 
 ::-webkit-scrollbar-track {
   background: transparent;
+}
+
+.d-grid {
+  position: relative; /* Deep black base */
+  overflow: hidden;
+  min-height: 600px; /* Adjust height as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.d-grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* The Grid Pattern */
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px; /* Size of the squares */
+
+  /* The Fade-out Effect */
+  mask-image: linear-gradient(
+    to bottom,
+    rgb(250, 250, 250) 50%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgb(231, 231, 231) 50%,
+    transparent 100%
+  );
+
+  pointer-events: none; /* Allows clicking through the grid */
+  z-index: 0;
 }

@@ -18,7 +18,14 @@ const footer_columns = [
   },
   {
     title: "Resources",
-    links: [{ text: "Documentation", href: "#docs" }],
+    links: [
+      { text: "Documentation", href: "/docs" },
+      {
+        text: "Buy me a malt",
+        href: "https://buymeamalt.com/@elite_dev",
+        external: true,
+      },
+    ],
   },
 ];
 
@@ -83,6 +90,8 @@ const Footer = () => {
                   <li key={link.text}>
                     <a
                       href={link.href}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noreferrer" : undefined}
                       className="text-sm font-light tracking-wide text-neutral-300 transition-colors hover:text-primary"
                     >
                       {link.text}
